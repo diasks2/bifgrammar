@@ -13,9 +13,23 @@ h1 {
 	text-align: center;
 }
 
+.strike-through {
+	text-decoration: line-through;
+}
+
 .blue {
 	font-weight:bold;
 	color: #258585;
+}
+
+.purple {
+	font-weight:bold;
+	color: #660066;
+}
+
+.orange {
+	font-weight:bold;
+	color: #b84700;
 }
 
 .testSentence{
@@ -26,11 +40,11 @@ h1 {
 	cursor: hand; cursor: pointer;
 }
 
-#correct_check {
+.correct {
 	display:none;
 }
 
-#wrong_check {
+.wrong {
 	display:none;
 }
 
@@ -38,6 +52,90 @@ h1 {
 	display:none;
 }
 
-#blueNext {
+.purpleWords1 {
 	display:none;
+}
+
+.purpleWords2 {
+	display:none;
+}
+
+.purpleWords3 {
+	display:none;
+}
+
+.orangeWords1 {
+	display:none;
+}
+
+.orangeWords2 {
+	display:none;
+}
+
+.painting1 {
+	display:none;
+}
+
+#blueNext1 {
+	display:none;
+}
+
+#blueNext2 {
+	display:none;
+}
+
+#purpleNext1 {
+	display:none;
+}
+
+#purpleNext2 {
+	display:none;
+}
+
+#purpleNext3 {
+	display:none;
+}
+
+#orangeNext1 {
+	display:none;
+}
+
+#orangeNext2 {
+	display:none;
+}
+
+.outer {
+	position:relative;
+	height:110px;
+	margin-top:25px;
+}
+
+.inner_a {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.inner_b {
+	position:absolute;
+	width:200px;
+	top:-38px;
+	left:35px;
+}
+.inner_c {
+	position:absolute;
+	width:220px;
+	top:-22px;
+	left:210px;
+}
+.inner_d {
+	position:absolute;
+	width:300px;
+	top:23px;
+	left:35px;
+}
+.inner_e {
+	position:absolute;
+	width:200px;
+	top:40px;
+	left:288px;
 }

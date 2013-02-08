@@ -7,25 +7,28 @@
 		<br>
 		Try out our free demo below and learn more about the Fassler Color Method.
 	</p>
-
 	<button class="btn btn-large btn-primary" type="button" id="demoButton">Start Free Demo</button>
 </div>
-
 
 <div id="grammarModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   	<div class="modal-header">
     	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    	<h3 class="blueWords1">The Blue Words</h3>
-    	<h3 class="blueWords2">The Blue Words Part II</h3>
+    	<h3 class="blueWords1">Blue Words</h3>
+    	<h3 class="blueWords2">Blue Words Part II</h3>
+    	<h3 class="purpleWords1">Purple Words</h3>
+    	<h3 class="purpleWords2">Purple Words Part II</h3>
+    	<h3 class="purpleWords3">Purple Words Part III</h3>
+    	<h3 class="orangeWords1">Orange Words</h3>
+    	<h3 class="orangeWords2">Orange Words Part II</h3>
+    	<h3 class="painting1">Time to Paint</h3>
   	</div>
   	<div class="modal-body">
-  		<div class="pull-right" id="correct_check">
+  		<div class="pull-right correct">
     		<%= image_tag("correct.png", :alt => "Correct!") %>
     	</div>	
-    	<div class="pull-right" id="wrong_check">
+    	<div class="pull-right wrong">
     		<%= image_tag("wrong.png", :alt => "Sorry, try again!") %>
     	</div>	
-
 	  	<div class="blueWords1">
 	   		<p>
 	   			Look at the following sentences:
@@ -34,7 +37,10 @@
 					<li><span class="blue">He</span> is tall.</li>
 					<li><span class="blue">They</span> feel sick.</li>
 				</ul>
-				Part of each sentence is colored in blue. Now look at the sentence below. Click on the word that you think should be the blue word.
+				Part of each sentence is colored in blue. Blue words are the subject of the sentence. Sometimes there may be multiple blue words in one sentence. 
+				<br>
+				<br>
+				Now look at the sentence below. Click on the word that you think should be the blue word.
 			</p>
 			<p class="testSentence center">
 				<span class="wordExample blueCorrect">He</span> <span class="wordExample blueWrong">goes</span> <span class="wordExample blueWrong">to</span> <span class="wordExample blueWrong">school</span>.
@@ -58,10 +64,143 @@
 				<span class="wordExample blueCorrect1">I</span> <span class="wordExample blueWrong">knew</span> <span class="wordExample blueCorrect2">it</span> <span class="wordExample blueWrong">was</span> <span class="wordExample blueWrong">a</span> <span class="wordExample blueWrong">good</span> <span class="wordExample blueWrong">time</span> <span class="wordExample blueWrong">to</span> <span class="wordExample blueWrong">have</span> <span class="wordExample blueWrong">ideas</span>.
 			</p>
 	  	</div>
+	  	<div class="purpleWords1">
+	   		<p>
+	   			Awesome! You are progressing fast. Let's move on to purple words. 
+	   			<br>
+	   			Purple words are question words
+	   			<br>
+	   			(i.e. Who, What, When, Where, Why, How).
+	   			<br>
+	   			<br>
+	   			First, some examples:
+	   			<ul>
+					<li><span class="purple">Where</span> did Joe eat?</li>
+					<li><span class="purple">Who</span> did I eat sashimi with at Tokyo Station on Tuesday?</li>
+					<li><span class="purple">When</span> were you discussing this?</li>
+					<li><span class="purple">How</span> is the weather?</li>
+				</ul>
+				Now click on the purple word in the sentence below.
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample purpleCorrect">Why</span> <span class="wordExample purpleWrong">did</span> <span class="wordExample purpleWrong">I</span> <span class="wordExample purpleWrong">go</span> <span class="wordExample purpleWrong">to</span> <span class="wordExample purpleWrong">the</span> <span class="wordExample purpleWrong">store?</span>
+			</p>
+	  	</div>
+	  	<div class="purpleWords2">
+	   		<p>
+	   			The purpose of purple words is always to remove 
+	   			<br>
+	   			another word (or phrase) from the sentence.
+	   			<br>
+	   			<br>
+	   			Check out these examples:
+	   		</p>	
+	   		<div class="outer">
+	   			<div class="inner_a">	
+		   			<ul>
+		   				
+						<li><span class="purple">Who</span> did I eat sashimi with <span class="strike-through">Bill</span> at Tokyo Station on Tuesday? Bill.</li>
+						<br>
+						<br>
+						<li><span class="purple">Where</span> did I eat sashimi with Bill at <span class="strike-through">Tokyo Station</span> on Tuesday? Tokyo Station.</li>
+					</ul>
+				</div>
+				<div class="inner_b">
+					<svg>
+  						<path d="M 5 40 q 35 -50 165 0" stroke="#660066" stroke-width="2" fill="none" />
+					</svg>
+				</div>
+				<div class="inner_c">
+					<svg>
+  						<path d="M 0 40 q 30 50 210 0" stroke="#258585" stroke-width="2" fill="none" />
+					</svg>
+				</div>
+				<div class="inner_d">
+					<svg>
+  						<path d="M 5 40 q 35 -50 245 0" stroke="#660066" stroke-width="2" fill="none" />
+					</svg>
+				</div>
+				<div class="inner_e">
+					<svg>
+  						<path d="M 0 40 q 30 50 175 0" stroke="#258585" stroke-width="2" fill="none" />
+					</svg>
+				</div>
+			</div>		
+			<p>
+				First click on the purple word in the sentence below and then click on the extra word(s) that needs to be removed.
+			</p>
+			<p class="testSentence center">
+				 
+				<span class="wordExample purpleCorrect1">When</span> <span class="wordExample purpleWrong">did</span> <span class="wordExample purpleWrong">I</span> <span class="wordExample purpleWrong">eat</span> <span class="wordExample purpleWrong">sashimi</span> <span class="wordExample purpleWrong">with</span> <span class="wordExample purpleWrong">Bill</span> <span class="wordExample purpleWrong">at</span> <span class="wordExample purpleWrong">Tokyo</span> <span class="wordExample purpleWrong">Station</span> <span class="wordExample purpleCorrect2">on</span> <span class="wordExample purpleCorrect3">Tuesday</span>?
+			</p>
+	  	</div>
+	  	<div class="purpleWords3">
+	   		<p>
+	   			Nice work! Let's make it a touch more difficult. 
+	   			<br>
+	   			Purple words can also appear in relative clauses.
+	   			<br>
+	   			<br>
+	   			Take a look at these examples:
+	   			<ul>
+					<li>Nobody understood <span class="purple">what</span> the movie was talking about.</li>
+					<li>I was surprised <span class="purple">when</span> he showed up to the office with purple and red hair.</li>
+					<li>I don't remember <span class="purple">what</span> we were talking about last Sunday.</li>
+				</ul>
+				Next please click on the purple word in the sentence below.
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample purpleWrong">I</span> <span class="wordExample purpleWrong">realized</span> <span class="wordExample purpleCorrect4">that</span> <span class="wordExample purpleCorrect5">what</span> <span class="wordExample purpleWrong">one</span> <span class="wordExample purpleWrong">thinks</span> <span class="wordExample purpleWrong">about</span> <span class="wordExample purpleWrong">in</span> <span class="wordExample purpleWrong">the</span> <span class="wordExample purpleWrong">shower</span> <span class="wordExample purpleWrong">in</span> <span class="wordExample purpleWrong">the</span> <span class="wordExample purpleWrong">morning</span> <span class="wordExample purpleWrong">is</span> <span class="wordExample purpleWrong">more</span> <span class="wordExample purpleWrong">important</span> <span class="wordExample purpleWrong">than</span> <span class="wordExample purpleWrong">I'd</span> <span class="wordExample purpleWrong">thought</span>.
+			</p>
+	  	</div>
+	  	<div class="orangeWords1">
+	   		<p>
+	   			You are on your way! Two colors down! Let's move on to orange words.
+	   			<br>
+	   			Orange words are auxiliary verbs (i.e. did, does, will, would, etc.).
+	   			<br>
+	   			Here are some examples:
+	   			<ul>
+					<li>I <span class="orange">did</span> eat pizza.</li>
+					<li>I <span class="orange">I</span> might eat pizza.</li>
+					<li>I <span class="orange">have</span> eaten pizza.</li>
+					<li><span class="orange">Shall</span> we eat?</li>
+				</ul>
+				Ready? Try it! Click on the orange word in the sentence below.
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample orangeWrong">I</span> <span class="wordExample orangeCorrect">am</span> <span class="wordExample orangeWrong">going</span> <span class="wordExample orangeWrong">to</span> <span class="wordExample orangeWrong">eat</span> <span class="wordExample orangeWrong">pizza</span>.
+			</p>
+	  	</div>
+	  	<div class="orangeWords2">
+	   		<p>
+	   			Great! Now it gets tough. Orange words are the trickiest color.
+	   			If you can find the orange word in every sentence, you will become an English grammar master.
+	   			<br>
+	   			Take a look at these examples:
+	   			<ul>
+					<li>I <span class="orange">did</span> eat pizza.</li>
+					<li>I <span class="orange">I</span> might eat pizza.</li>
+					<li>I <span class="orange">have</span> eaten pizza.</li>
+					<li><span class="orange">Shall</span> we eat?</li>
+				</ul>
+				OK, now please click on the orange word in the sentence below.
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample orangeWrong">I</span> <span class="wordExample orangeCorrect">am</span> <span class="wordExample orangeWrong">going</span> <span class="wordExample orangeWrong">to</span> <span class="wordExample orangeWrong">eat</span> <span class="wordExample orangeWrong">pizza</span>.
+			</p>
+	  	</div>
 	</div>  	
   	<div class="modal-footer">
-  		<p class="pull-left"><br></p>
-    	<button class="blueWords1 btn btn-primary" id="blueNext">Next</button>
+  		<h4 class="pull-left" id="heightAdj"><br></h4>
+  		<h4 class="pull-left correct">Great job! Click 'Next' to continue!</h4>
+    	<button class="blueWords1 btn btn-primary" id="blueNext1">Next</button>
+    	<button class="blueWords2 btn btn-primary" id="blueNext2">Next</button>
+    	<button class="purpleWords1 btn btn-primary" id="purpleNext1">Next</button>
+    	<button class="purpleWords2 btn btn-primary" id="purpleNext2">Next</button>
+    	<button class="purpleWords3 btn btn-primary" id="purpleNext3">Next</button>
+    	<button class="orangeWords1 btn btn-primary" id="orangeNext1">Next</button>
+    	<button class="orangeWords2 btn btn-primary" id="orangeNext2">Next</button>
   	</div>
 </div>
 
@@ -72,36 +211,203 @@ $(function() {
 	});
 	$('.blueCorrect').click(function(){
 		$('.blueCorrect').addClass('blue');
-		$('#wrong_check').hide();
-		$('#correct_check').show();
-		$('#blueNext').show();
+		$('.wrong').hide();
+		$('.correct').show();
+		$('#heightAdj').hide();
+		$('#blueNext1').show();
 	});
 	$('.blueCorrect1').click(function(){
 		$('.blueCorrect1').addClass('blue');
-		$('#wrong_check').hide();
+		$('.wrong').hide();
 		if ($('.blueCorrect2').hasClass('blue')){
-			$('#correct_check').show();
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#blueNext2').show();
 		}
 	});
 	$('.blueCorrect2').click(function(){
 		$('.blueCorrect2').addClass('blue');
-		$('#wrong_check').hide();
+		$('.wrong').hide();
 		if ($('.blueCorrect1').hasClass('blue')){
-			$('#correct_check').show();
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#blueNext2').show();
 		}
 	});
 	$('.blueWrong').click(function(){
-		$('#wrong_check').fadeIn(1000).fadeOut(1000);
+		$('.wrong').fadeIn(1000).fadeOut(1000);
 		$('.blueCorrect').removeClass('blue');
 		$('.blueCorrect1').removeClass('blue');
 		$('.blueCorrect2').removeClass('blue');
-		$('#correct_check').hide();
+		$('.correct').hide();
+		$('#blueNext1').hide();
+		$('#blueNext2').hide();
+		$('#heightAdj').show();
 	});
-	$('#blueNext').click(function(){
-		$('#correct_check').hide();
+	$('.purpleCorrect').click(function(){
+		$('.purpleCorrect').addClass('purple');
+		$('.wrong').hide();
+		$('.correct').show();
+		$('#heightAdj').hide();
+		$('#purpleNext1').show();
+	});
+	$('.purpleCorrect1').click(function(){
+		$('.purpleCorrect1').addClass('purple');
+		$('.wrong').hide();
+		if ($('.purpleCorrect2').hasClass('strike-through') && $('.purpleCorrect3').hasClass('strike-through')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#purpleNext2').show();
+		}
+	});
+	$('.purpleCorrect2').click(function(){
+		$('.purpleCorrect2').addClass('strike-through');
+		$('.wrong').hide();
+		if ($('.purpleCorrect1').hasClass('purple') && $('.purpleCorrect3').hasClass('strike-through')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#purpleNext2').show();
+		}
+	});
+	$('.purpleCorrect3').click(function(){
+		$('.purpleCorrect3').addClass('strike-through');
+		$('.wrong').hide();
+		if ($('.purpleCorrect2').hasClass('strike-through') && $('.purpleCorrect1').hasClass('purple')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#purpleNext2').show();
+		}
+	});
+	$('.purpleCorrect4').click(function(){
+		$('.purpleCorrect4').addClass('purple');
+		$('.wrong').hide();
+		if ($('.purpleCorrect5').hasClass('purple')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#purpleNext3').show();
+		}
+	});
+	$('.purpleCorrect5').click(function(){
+		$('.purpleCorrect5').addClass('purple');
+		$('.wrong').hide();
+		if ($('.purpleCorrect4').hasClass('purple')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#purpleNext3').show();
+		}
+	});
+	$('.purpleWrong').click(function(){
+		$('.wrong').fadeIn(1000).fadeOut(1000);
+		$('.purpleCorrect').removeClass('purple');
+		$('.purpleCorrect1').removeClass('purple');
+		$('.purpleCorrect2').removeClass('purple');
+		$('.purpleCorrect3').removeClass('purple');
+		$('.purpleCorrect4').removeClass('strike-through');
+		$('.purpleCorrect5').removeClass('strike-through');
+		$('.correct').hide();
+		$('#purpleNext1').hide();
+		$('#purpleNext2').hide();
+		$('#purpleNext3').hide();
+		$('#heightAdj').show();
+	});
+	$('.orangeCorrect').click(function(){
+		$('.orangeCorrect').addClass('orange');
+		$('.wrong').hide();
+		$('.correct').show();
+		$('#heightAdj').hide();
+		$('#orangeNext1').show();
+	});
+	$('.orangeCorrect1').click(function(){
+		$('.orangeCorrect1').addClass('orange');
+		$('.wrong').hide();
+		if ($('.orangeCorrect2').hasClass('orange')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#orangeNext2').show();
+		}
+	});
+	$('.orangeCorrect2').click(function(){
+		$('.orangeCorrect2').addClass('orange');
+		$('.wrong').hide();
+		if ($('.orangeCorrect1').hasClass('orange')){
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#orangeNext2').show();
+		}
+	});
+	$('.orangeWrong').click(function(){
+		$('.wrong').fadeIn(1000).fadeOut(1000);
+		$('.orangeCorrect').removeClass('orange');
+		$('.orangeCorrect1').removeClass('orange');
+		$('.orangeCorrect2').removeClass('orange');
+		$('.correct').hide();
+		$('#orangeNext1').hide();
+		$('#orangeNext2').hide();
+		$('#heightAdj').show();
+	});
+	$('#blueNext1').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
 		$('.blueWords1').hide();
 		$('.blueCorrect').removeClass('blue');
 		$('.blueWords2').show();
+		$('#blueNext2').hide();
+	});
+	$('#blueNext2').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.blueWords2').hide();
+		$('.blueCorrect').removeClass('blue');
+		$('.blueCorrect1').removeClass('blue');
+		$('.blueCorrect2').removeClass('blue');
+		$('.purpleWords1').show();
+		$('#purpleNext1').hide();
+	});
+	$('#purpleNext1').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.purpleWords1').hide();
+		$('.purpleCorrect').removeClass('purple');
+		$('.purpleWords2').show();
+		$('#purpleNext2').hide();
+	});
+	$('#purpleNext2').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.purpleWords2').hide();
+		$('.purpleCorrect').removeClass('purple');
+		$('.purpleCorrect1').removeClass('purple');
+		$('.purpleCorrect2').removeClass('purple');
+		$('.purpleWords3').show();
+		$('#purpleNext3').hide();
+	});
+	$('#purpleNext3').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.purpleWords3').hide();
+		$('.purpleCorrect3').removeClass('purple');
+		$('.purpleCorrect4').removeClass('purple');
+		$('.purpleCorrect5').removeClass('purple');
+		$('.orangeWords1').show();
+		$('#orangeNext1').hide();
+	});
+	$('#orangeNext1').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.orangeWords1').hide();
+		$('.orangeCorrect').removeClass('orange');
+		$('.orangeWords2').show();
+		$('#orangeNext2').hide();
+	});
+	$('#orangeNext2').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.orangeWords2').hide();
+		$('.orangeCorrect').removeClass('orange');
+		$('.orangeCorrect1').removeClass('orange');
+		$('.orangeCorrect2').removeClass('orange');
+		$('.orangeWords1').show();
+		$('#orangeNext1').hide();
 	});
 });
 </script>
