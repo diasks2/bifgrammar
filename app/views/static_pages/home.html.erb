@@ -175,19 +175,45 @@
 	  	<div class="orangeWords2">
 	   		<p>
 	   			Great! Now it gets tough. Orange words are the trickiest color.
-	   			If you can find the orange word in every sentence, you will become an English grammar master.
 	   			<br>
-	   			Take a look at these examples:
+	   			If you can find the orange word in every sentence, 
+	   			<br>
+	   			you will become an English grammar master.
+	   			<br>
+	   			<br>
+	   			Let's learn about the 'secret do' and 'secret does'. 
+	   			<br>
+	   			Study the following examples:
 	   			<ul>
-					<li>I <span class="orange">did</span> eat pizza.</li>
-					<li>I <span class="orange">I</span> might eat pizza.</li>
-					<li>I <span class="orange">have</span> eaten pizza.</li>
-					<li><span class="orange">Shall</span> we eat?</li>
+					<li>He ran to the store. (<span class="orange">did</span> run)</li>
+					<li>He goes to the store. (<span class="orange">does</span> go)</li>
+					<li>I like coffee. (<span class="orange">do</span> like)</li>
 				</ul>
-				OK, now please click on the orange word in the sentence below.
+				Got it? Test yourself by writing the orange word for the following sentence in the box below.
 			</p>
 			<p class="testSentence center">
-				<span class="wordExample orangeWrong">I</span> <span class="wordExample orangeCorrect">am</span> <span class="wordExample orangeWrong">going</span> <span class="wordExample orangeWrong">to</span> <span class="wordExample orangeWrong">eat</span> <span class="wordExample orangeWrong">pizza</span>.
+				She said, "I <span class="orange" id="hidden_orange">do</span> like you."
+			</p>
+			<div class="center">
+				<p id="orangeHintText">Find the 'secret do'</p>
+				<input type="text" name="orangeWord" placeholder="Orange word?" id="orangeText"><br>
+				<div class="btn-group">
+				  	<button class="btn btn-primary" id="orangeSubmit">Submit</button>
+				  	<button class="btn btn-info" id="orangeHint">Hint</button>
+				</div>
+			</div>
+	  	</div>
+	  	<div class="painting1">
+	   		<p>
+	   			Time to paint!
+	   			<br>
+	   			Study the following examples:
+	   			<ul>
+					<li>He ran to the store. (<span class="orange">did</span> run)</li>
+					<li>He goes to the store. (<span class="orange">does</span> go)</li>
+					<li>I like coffee. (<span class="orange">do</span> like)</li>
+				</ul>
+				Got it? Test yourself by writing the orange word for the following sentence in the box below.
 			</p>
 	  	</div>
 	</div>  	
@@ -201,6 +227,7 @@
     	<button class="purpleWords3 btn btn-primary" id="purpleNext3">Next</button>
     	<button class="orangeWords1 btn btn-primary" id="orangeNext1">Next</button>
     	<button class="orangeWords2 btn btn-primary" id="orangeNext2">Next</button>
+    	<button class="painting1 btn btn-primary" id="paintingNext1">Next</button>
   	</div>
 </div>
 
@@ -406,8 +433,28 @@ $(function() {
 		$('.orangeCorrect').removeClass('orange');
 		$('.orangeCorrect1').removeClass('orange');
 		$('.orangeCorrect2').removeClass('orange');
-		$('.orangeWords1').show();
-		$('#orangeNext1').hide();
+		$('.painting1').show();
+		$('#paintingNext1').hide();
 	});
+	$('#orangeHint').click(function(){
+		$('#orangeHintText').toggle();
+	});
+	$('#orangeSubmit').click(function(){
+		if ($("#orangeText").val().toLowerCase() === 'do') {
+			$('.wrong').hide();
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#orangeNext2').show();
+			$('#hidden_orange').show();
+		} else {
+			$('.wrong').fadeIn(1000).fadeOut(1000);
+			$('.correct').hide();
+			$('#heightAdj').show();
+			$('#orangeNext2').hide();
+			$('#hidden_orange').hide();
+		}
+	});
+
+	
 });
 </script>
