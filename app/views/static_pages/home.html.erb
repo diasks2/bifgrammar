@@ -20,7 +20,8 @@
     	<h3 class="purpleWords3">Purple Words Part III</h3>
     	<h3 class="orangeWords1">Orange Words</h3>
     	<h3 class="orangeWords2">Orange Words Part II</h3>
-    	<h3 class="painting1">Time to Paint</h3>
+    	<h3 class="painting1">Sentence Painting</h3>
+    	<h3 class="painting2">More Sentence Painting</h3>
   	</div>
   	<div class="modal-body">
   		<div class="pull-right correct">
@@ -130,7 +131,6 @@
 				First click on the purple word in the sentence below and then click on the extra word(s) that needs to be removed.
 			</p>
 			<p class="testSentence center">
-				 
 				<span class="wordExample purpleCorrect1">When</span> <span class="wordExample purpleWrong">did</span> <span class="wordExample purpleWrong">I</span> <span class="wordExample purpleWrong">eat</span> <span class="wordExample purpleWrong">sashimi</span> <span class="wordExample purpleWrong">with</span> <span class="wordExample purpleWrong">Bill</span> <span class="wordExample purpleWrong">at</span> <span class="wordExample purpleWrong">Tokyo</span> <span class="wordExample purpleWrong">Station</span> <span class="wordExample purpleCorrect2">on</span> <span class="wordExample purpleCorrect3">Tuesday</span>?
 			</p>
 	  	</div>
@@ -196,7 +196,7 @@
 			</p>
 			<div class="center">
 				<p id="orangeHintText">Find the 'secret do'</p>
-				<input type="text" name="orangeWord" placeholder="Orange word?" id="orangeText"><br>
+				<input type="text" name="orangeWord" placeholder="What's the orange word?" id="orangeText"><br>
 				<div class="btn-group">
 				  	<button class="btn btn-primary" id="orangeSubmit">Submit</button>
 				  	<button class="btn btn-info" id="orangeHint">Hint</button>
@@ -209,12 +209,35 @@
 	   			<br>
 	   			Study the following examples:
 	   			<ul>
-					<li>He ran to the store. (<span class="orange">did</span> run)</li>
-					<li>He goes to the store. (<span class="orange">does</span> go)</li>
-					<li>I like coffee. (<span class="orange">do</span> like)</li>
+					<li><span class="purple">What</span> <span class="orange">do</span> <span class="blue">fruit flies</span> like?</li>
+					<li><span class="blue">I</span> <span class="orange">was</span> surprised <span class="purple">when</span> <span class="blue">he</span> show<span class="orange">ed</span> up to the office with purple and red hair.</li>
 				</ul>
-				Got it? Test yourself by writing the orange word for the following sentence in the box below.
+				Paint the sentence below by first clicking on the color to select it and then clicking on the word that should be that color. When you are finished, click 'Check Answer' to see if you answer is correct.
 			</p>
+			<div id="circle_outer">
+				<div class="orange_circle"></div>
+				<div class="blue_circle"></div>
+				<div class="purple_circle"></div>
+				<div class="clearfix"></div>
+			</div>	
+			<br>
+			<p class="testSentence center">
+				<span class="wordExample" id="paintWord1">How</span> <span class="wordExample" id="paintWord2">does</span> <span class="wordExample" id="paintWord3">fruit</span> <span class="wordExample" id="paintWord4">fly</span>?
+			</p>
+			<div class="center">
+				<button class="btn btn-primary" id="paintingSubmit">Check Answer</button>
+			</div>	
+	  	</div>
+	  	<div class="painting2">
+	   		<p>
+	   			More painting coming soon!
+			</p>
+			<div id="circle_outer">
+				<div class="orange_circle"></div>
+				<div class="blue_circle"></div>
+				<div class="purple_circle"></div>
+				<div class="clearfix"></div>
+			</div>	
 	  	</div>
 	</div>  	
   	<div class="modal-footer">
@@ -454,7 +477,78 @@ $(function() {
 			$('#hidden_orange').hide();
 		}
 	});
-
+	var color = 'orange'
 	
+	var setcolor = function(c){
+		console.log(c);
+		color = c;
+	}; 
+
+	$('.orange_circle').click(function(){
+		setcolor('orange');
+	});
+	$('.purple_circle').click(function(){
+		setcolor('purple');
+	});
+	$('.blue_circle').click(function(){
+		setcolor('blue');
+	});
+
+	$('#paintWord1').click(function(){
+		$('#paintWord1').removeClass('orange');
+		$('#paintWord1').removeClass('purple');
+		$('#paintWord1').removeClass('blue');
+		$('#paintWord1').addClass(color);
+	});
+	$('#paintWord2').click(function(){
+		$('#paintWord2').removeClass('orange');
+		$('#paintWord2').removeClass('purple');
+		$('#paintWord2').removeClass('blue');
+		$('#paintWord2').addClass(color);
+	});
+	$('#paintWord3').click(function(){
+		$('#paintWord3').removeClass('orange');
+		$('#paintWord3').removeClass('purple');
+		$('#paintWord3').removeClass('blue');
+		$('#paintWord3').addClass(color);
+	});
+	$('#paintWord4').click(function(){
+		$('#paintWord4').removeClass('orange');
+		$('#paintWord4').removeClass('purple');
+		$('#paintWord4').removeClass('blue');
+		$('#paintWord4').addClass(color);
+	});
+	$('#paintingSubmit').click(function(){
+		if ($('#paintWord1').hasClass('purple') && $('#paintWord2').hasClass('orange') && $('#paintWord3').hasClass('blue') && !$('#paintWord4').hasClass('purple') && !$('#paintWord4').hasClass('orange') && !$('#paintWord4').hasClass('blue')) {
+			$('.wrong').hide();
+			$('.correct').show();
+			$('#heightAdj').hide();
+			$('#paintingNext1').show();
+		} else {
+			$('.wrong').fadeIn(1000).fadeOut(1000);
+			$('.correct').hide();
+			$('#heightAdj').show();
+			$('#paintingNext1').hide();
+			$('#paintWord4').removeClass('orange');
+			$('#paintWord4').removeClass('purple');
+			$('#paintWord4').removeClass('blue');
+			$('#paintWord3').removeClass('orange');
+			$('#paintWord3').removeClass('purple');
+			$('#paintWord3').removeClass('blue');
+			$('#paintWord2').removeClass('orange');
+			$('#paintWord2').removeClass('purple');
+			$('#paintWord2').removeClass('blue');
+			$('#paintWord1').removeClass('orange');
+			$('#paintWord1').removeClass('purple');
+			$('#paintWord1').removeClass('blue');
+		}
+	});
+	$('#paintingNext1').click(function(){
+		$('.correct').hide();
+		$('#heightAdj').show();
+		$('.painting1').hide();
+		$('.painting2').show();
+		$('#paintingNext1').hide();
+	});
 });
 </script>
