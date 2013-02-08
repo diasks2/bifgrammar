@@ -217,8 +217,8 @@
 				Paint the sentence below by first clicking on the color to select it and then clicking on the word that should be that color. When you are finished, click 'Check Answer' to see if you answer is correct.
 			</p>
 			<div id="circle_outer">
-				<div class="orange_circle"></div>
 				<div class="blue_circle"></div>
+				<div class="orange_circle"></div>
 				<div class="purple_circle"></div>
 				<div class="clearfix"></div>
 			</div>	
@@ -232,14 +232,32 @@
 	  	</div>
 	  	<div class="painting2">
 	   		<p>
-	   			More painting coming soon!
+	   			Great job! You've completed the trial demo. 
+	   			<br>
+	   			<br>
+	   			Sign up now and you will receive:
+	   			<ul>
+	   				<li>Immediate access to the Fassler Color Method Interactive Painting Tool</li>
+	   				<li>A download link to our e-book "Understanding the Fassler Color Method"</li>
+	   			</ul>
 			</p>
-			<div id="circle_outer">
-				<div class="orange_circle"></div>
-				<div class="blue_circle"></div>
-				<div class="purple_circle"></div>
-				<div class="clearfix"></div>
-			</div>	
+			<%= form_tag(painting_path, :class=> "form-horizontal") do %>
+			  	<div class="control-group">
+			    	<label class="control-label" for="inputEmail">Email</label>
+			    	<div class="controls">
+			      		<input type="email" id="inputEmail" placeholder="Email" required>
+			    	</div>
+			  	</div>
+			  	<div class="control-group">
+			    	<label class="control-label" for="inputPassword">Password</label>
+			    	<div class="controls">
+			      		<input type="password" id="inputPassword" placeholder="Password">
+			    	</div>
+			  	</div>
+			  	<div class="center">
+			      	<button class="btn btn-primary" id="signupPainting">Sign me up!</button>
+			  	</div>
+			<% end %>
 	  	</div>
 	</div>  	
   	<div class="modal-footer">
@@ -479,7 +497,7 @@ $(function() {
 			$('#hidden_orange').hide();
 		}
 	});
-	var color = 'orange'
+	var color = 'blue'
 	
 	var setcolor = function(c){
 		console.log(c);

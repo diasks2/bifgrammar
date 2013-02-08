@@ -1,0 +1,131 @@
+<h1 class="center">Fassler Color Method Interactive Painting Tool</h1>
+<br>
+<div class="well">
+	<div class="blue_circle"></div>
+	<div class="orange_circle"></div>
+	<div class="purple_circle"></div>
+	<div class="bold_tool"><%= link_to(image_tag("bold.png", :alt => "bold"), :remote => true) %></div>
+	<div class="underline_tool"><%= link_to(image_tag("underline.png", :alt => "bold"), :remote => true) %></div>
+	<div class="tool_button">
+		<button class="btn btn-large btn-success" id="paintingToolStart">Start!</button>
+	</div>	
+	<div class="clearfix"></div>
+
+	<br>
+	<div class="well">
+		<br>
+		<br>
+		<p class="center painting_text_large" id="testSentence1">
+			<span class="wordExample" id="paintWord10">I</span> <span class="wordExample" id="paintWord11">was</span> <span class="wordExample" id="paintWord12">surprised</span> <span class="wordExample" id="paintWord13">when</span> <span class="wordExample" id="paintWord14">he</span> <span class="wordExample" id="paintWord15">showed</span> <span class="wordExample" id="paintWord16">up</span> <span class="wordExample" id="paintWord17">to</span> <span class="wordExample" id="paintWord18">the</span> <span class="wordExample" id="paintWord19">office</span> <span class="wordExample" id="paintWord20">with</span> <span class="wordExample" id="paintWord21">purple</span> <span class="wordExample" id="paintWord22">and</span> <span class="wordExample" id="paintWord23">red</span> <span class="wordExample" id="paintWord24">hair</span>.
+		</p>	
+		<br>
+		<br>
+	</div>
+	<p class="painting_text">
+		Example:
+		<br>
+		"<span class="blue">I</span> <strong>realiz</strong><span class="orange">ed</span> recently <span class="purple">that</span> [<span class="purple">what</span> <span class="blue">one</span> <strong>think</strong><span class="orange">s</span> about] <span class="underline">in</span> the shower <span class="underline">in</span> the morning <span class="orange">is</span> more important than <span class="blue">I</span><span class="orange">'d</span> <strong>thought</strong>." - Paul Graham
+		<br>
+	</p>
+	<p>	
+		<h4>Key:</h4>
+		<ul>
+
+			<li>blue words: subject</li>
+ 			<li>orange words: auxiliary verb (did, does, will, would, can, could, etc.)</li>
+ 			<li>purple words: "wh*"-words, "how", sometimes "that"</li>
+ 			<li>bold words: action verbs</li>
+ 			<li>underlined words: prepositions</li>
+ 		</ul>	
+	</p>
+
+</div>	
+
+<script>
+$(function() {
+	var color = 'blue'
+	
+	var setcolor = function(c){
+		console.log(c);
+		color = c;
+	}; 
+
+	$('.orange_circle').click(function(){
+		setcolor('orange');
+	});
+	$('.purple_circle').click(function(){
+		setcolor('purple');
+	});
+	$('.blue_circle').click(function(){
+		setcolor('blue');
+	});
+	$('.underline_tool').click(function(){
+		setcolor('underline');
+	});
+	$('.bold_tool').click(function(){
+		setcolor('bold');
+	});
+
+	var setcolorClick = function(id) {
+		if ($('#' + id).hasClass(color)) {
+			$('#' + id).removeClass(color);
+		} else {
+			$('#' + id).removeClass('orange');
+			$('#' + id).removeClass('purple');
+			$('#' + id).removeClass('blue');
+			$('#' + id).removeClass('bold');
+			$('#' + id).removeClass('underline');
+			$('#' + id).addClass(color);
+		}
+	}
+
+	$('#paintWord10').click(function(){
+		setcolorClick('paintWord10');
+	});
+	$('#paintWord11').click(function(){
+		setcolorClick('paintWord11');
+	});
+	$('#paintWord12').click(function(){
+		setcolorClick('paintWord12');
+	});
+	$('#paintWord13').click(function(){
+		setcolorClick('paintWord13');
+	});
+	$('#paintWord14').click(function(){
+		setcolorClick('paintWord14');
+	});
+	$('#paintWord15').click(function(){
+		setcolorClick('paintWord15');
+	});
+	$('#paintWord16').click(function(){
+		setcolorClick('paintWord16');
+	});
+	$('#paintWord17').click(function(){
+		setcolorClick('paintWord17');
+	});
+	$('#paintWord18').click(function(){
+		setcolorClick('paintWord18');
+	});
+	$('#paintWord19').click(function(){
+		setcolorClick('paintWord19');
+	});
+	$('#paintWord20').click(function(){
+		setcolorClick('paintWord20');
+	});
+	$('#paintWord21').click(function(){
+		setcolorClick('paintWord21');
+	});
+	$('#paintWord22').click(function(){
+		setcolorClick('paintWord22');
+	});
+	$('#paintWord23').click(function(){
+		setcolorClick('paintWord23');
+	});
+	$('#paintWord24').click(function(){
+		setcolorClick('paintWord24');
+	});
+	$('#paintingToolStart').click(function(){
+		$('#testSentence1').show();
+	});
+});	
+</script>	
