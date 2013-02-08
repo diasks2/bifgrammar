@@ -1,0 +1,107 @@
+<div class="well center">
+	<h1>BiF Grammar - The Fassler Color Method</h1>
+	<%= image_tag("color_wheel.png", :alt => "BiF Grammar Color Wheel") %>
+	<h3>Do you struggle with English Grammar?</h3>
+	<p>
+		BiFluent uses a unique approach to teaching English grammar.
+		<br>
+		Try out our free demo below and learn more about the Fassler Color Method.
+	</p>
+
+	<button class="btn btn-large btn-primary" type="button" id="demoButton">Start Free Demo</button>
+</div>
+
+
+<div id="grammarModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 class="blueWords1">The Blue Words</h3>
+    	<h3 class="blueWords2">The Blue Words Part II</h3>
+  	</div>
+  	<div class="modal-body">
+  		<div class="pull-right" id="correct_check">
+    		<%= image_tag("correct.png", :alt => "Correct!") %>
+    	</div>	
+    	<div class="pull-right" id="wrong_check">
+    		<%= image_tag("wrong.png", :alt => "Sorry, try again!") %>
+    	</div>	
+
+	  	<div class="blueWords1">
+	   		<p>
+	   			Look at the following sentences:
+	   			<ul>
+					<li><span class="blue">I</span> go to the store.</li>
+					<li><span class="blue">He</span> is tall.</li>
+					<li><span class="blue">They</span> feel sick.</li>
+				</ul>
+				Part of each sentence is colored in blue. Now look at the sentence below. Click on the word that you think should be the blue word.
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample blueCorrect">He</span> <span class="wordExample blueWrong">goes</span> <span class="wordExample blueWrong">to</span> <span class="wordExample blueWrong">school</span>.
+			</p>
+	  	</div>
+	  	<div class="blueWords2">
+	   		<p>
+	   			Good job! Let's try one that is a little more challenging.
+	   			<br>
+	   			First, some more examples:
+	   			<ul>
+					<li><span class="blue">This discussion</span> was last Sunday.</li>
+					<li>When were <span class="blue">you</span> discussing this?</li>
+					<li>Would <span class="blue">you</span> like them here or there?</li>
+					<li>Does <span class="blue">fruit</span> fly like a banana?</li>
+					<li><span class="blue">That</span> is the car that <span class="blue">I</span> bought yesterday.</li>
+				</ul>
+				Ready, OK! Click on the word(s) you think should be the blue word(s).
+			</p>
+			<p class="testSentence center">
+				<span class="wordExample blueCorrect1">I</span> <span class="wordExample blueWrong">knew</span> <span class="wordExample blueCorrect2">it</span> <span class="wordExample blueWrong">was</span> <span class="wordExample blueWrong">a</span> <span class="wordExample blueWrong">good</span> <span class="wordExample blueWrong">time</span> <span class="wordExample blueWrong">to</span> <span class="wordExample blueWrong">have</span> <span class="wordExample blueWrong">ideas</span>.
+			</p>
+	  	</div>
+	</div>  	
+  	<div class="modal-footer">
+  		<p class="pull-left"><br></p>
+    	<button class="blueWords1 btn btn-primary" id="blueNext">Next</button>
+  	</div>
+</div>
+
+<script>
+$(function() {
+	$('#demoButton').click(function(){
+		$('#grammarModal').modal('show');
+	});
+	$('.blueCorrect').click(function(){
+		$('.blueCorrect').addClass('blue');
+		$('#wrong_check').hide();
+		$('#correct_check').show();
+		$('#blueNext').show();
+	});
+	$('.blueCorrect1').click(function(){
+		$('.blueCorrect1').addClass('blue');
+		$('#wrong_check').hide();
+		if ($('.blueCorrect2').hasClass('blue')){
+			$('#correct_check').show();
+		}
+	});
+	$('.blueCorrect2').click(function(){
+		$('.blueCorrect2').addClass('blue');
+		$('#wrong_check').hide();
+		if ($('.blueCorrect1').hasClass('blue')){
+			$('#correct_check').show();
+		}
+	});
+	$('.blueWrong').click(function(){
+		$('#wrong_check').fadeIn(1000).fadeOut(1000);
+		$('.blueCorrect').removeClass('blue');
+		$('.blueCorrect1').removeClass('blue');
+		$('.blueCorrect2').removeClass('blue');
+		$('#correct_check').hide();
+	});
+	$('#blueNext').click(function(){
+		$('#correct_check').hide();
+		$('.blueWords1').hide();
+		$('.blueCorrect').removeClass('blue');
+		$('.blueWords2').show();
+	});
+});
+</script>

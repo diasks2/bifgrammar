@@ -1,0 +1,43 @@
+@import "bootstrap";
+
+body {
+	margin-top: 20px;
+	background: url('/assets/pw_maze_white.png') repeat;
+}
+
+h1 {
+	font-family: 'Margarine', cursive;
+}
+
+.center {
+	text-align: center;
+}
+
+.blue {
+	font-weight:bold;
+	color: #258585;
+}
+
+.testSentence{
+	font-size:1.6em;
+}
+
+.wordExample{
+	cursor: hand; cursor: pointer;
+}
+
+#correct_check {
+	display:none;
+}
+
+#wrong_check {
+	display:none;
+}
+
+.blueWords2 {
+	display:none;
+}
+
+#blueNext {
+	display:none;
+}
