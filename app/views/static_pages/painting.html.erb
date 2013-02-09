@@ -4,22 +4,24 @@
 	<div class="blue_circle"></div>
 	<div class="orange_circle"></div>
 	<div class="purple_circle"></div>
-	<div class="bold_tool"><%= link_to(image_tag("bold.png", :alt => "bold"), :remote => true) %></div>
-	<div class="underline_tool"><%= link_to(image_tag("underline.png", :alt => "bold"), :remote => true) %></div>
+	<div class="bold_tool"><%= link_to(image_tag("bold.png", :alt => "Bold"), :remote => true) %></div>
+	<div class="underline_tool"><%= link_to(image_tag("underline.png", :alt => "Underline"), :remote => true) %></div>
 	<div class="tool_button">
 		<button class="btn btn-large btn-success" id="paintingToolStart">Start!</button>
 	</div>	
 	<div class="clearfix"></div>
 
 	<br>
-	<div class="well">
-		<br>
-		<br>
-		<p class="center painting_text_large" id="testSentence1">
-			<span class="wordExample" id="paintWord10">I</span> <span class="wordExample" id="paintWord11">was</span> <span class="wordExample" id="paintWord12">surprised</span> <span class="wordExample" id="paintWord13">when</span> <span class="wordExample" id="paintWord14">he</span> <span class="wordExample" id="paintWord15">showed</span> <span class="wordExample" id="paintWord16">up</span> <span class="wordExample" id="paintWord17">to</span> <span class="wordExample" id="paintWord18">the</span> <span class="wordExample" id="paintWord19">office</span> <span class="wordExample" id="paintWord20">with</span> <span class="wordExample" id="paintWord21">purple</span> <span class="wordExample" id="paintWord22">and</span> <span class="wordExample" id="paintWord23">red</span> <span class="wordExample" id="paintWord24">hair</span>.
-		</p>	
-		<br>
-		<br>
+	<div class="well" id="painting_canvas">
+		<div class="pull-right correct">
+    		<%= image_tag("correct.png", :alt => "Correct!") %>
+    	</div>	
+		<div id="floater"></div>
+    	<div id="child">
+			<p class="center painting_text_large" id="testSentence1">
+				<span class="wordExample" id="paintWord10">I</span> <span class="wordExample" id="paintWord11">was</span> <span class="wordExample" id="paintWord12">surprised</span> <span class="wordExample" id="paintWord13">when</span> <span class="wordExample" id="paintWord14">he</span> <span class="wordExample" id="paintWord15">showed</span> <span class="wordExample" id="paintWord16">up</span> <span class="wordExample" id="paintWord17">to</span> <span class="wordExample" id="paintWord18">the</span> <span class="wordExample" id="paintWord19">office</span> <span class="wordExample" id="paintWord20">with</span> <span class="wordExample" id="paintWord21">purple</span> <span class="wordExample" id="paintWord22">and</span> <span class="wordExample" id="paintWord23">red</span> <span class="wordExample" id="paintWord24">hair</span>.
+			</p>	
+		</div>
 	</div>
 	<p class="painting_text">
 		Example:
@@ -27,18 +29,33 @@
 		"<span class="blue">I</span> <strong>realiz</strong><span class="orange">ed</span> recently <span class="purple">that</span> [<span class="purple">what</span> <span class="blue">one</span> <strong>think</strong><span class="orange">s</span> about] <span class="underline">in</span> the shower <span class="underline">in</span> the morning <span class="orange">is</span> more important than <span class="blue">I</span><span class="orange">'d</span> <strong>thought</strong>." - Paul Graham
 		<br>
 	</p>
-	<p>	
-		<h4>Key:</h4>
-		<ul>
-
-			<li>blue words: subject</li>
- 			<li>orange words: auxiliary verb (did, does, will, would, can, could, etc.)</li>
- 			<li>purple words: "wh*"-words, "how", sometimes "that"</li>
- 			<li>bold words: action verbs</li>
- 			<li>underlined words: prepositions</li>
- 		</ul>	
-	</p>
-
+	<br>
+	<br>
+  	<table class="table table-bordered table-hover">
+  		<caption><h4>Fassler Color Method Key</h4></caption>
+  		<tbody>
+    		<tr>
+		      <td><div class="blue_circle"></div></td>
+		      <td><p id="painting_table">Blue words: subject</p></td>
+    		</tr>
+    		<tr>
+		      <td><div class="orange_circle"></div></td>
+		      <td><p id="painting_table">Orange words: auxiliary verb (did, does, will, would, can, could, etc.)</p></td>
+    		</tr>
+    		<tr>
+		      <td><div class="purple_circle"></div></td>
+		      <td><p id="painting_table">Purple words: "wh*"-words, "how", sometimes "that"</p></td>
+    		</tr>
+    		<tr>
+		      <td><div class="bold_tool"><%= link_to(image_tag("bold.png", :alt => "Bold"), :remote => true) %></div></div></td>
+		      <td><p id="painting_table">Bold words: action verbs</p></td>
+    		</tr>
+    		<tr>
+		      <td><div class="underline_tool"><%= link_to(image_tag("underline.png", :alt => "Underline"), :remote => true) %></td>
+		      <td><p id="painting_table">Underlined words: prepositions</p></td>
+    		</tr>
+  		</tbody>
+	</table>
 </div>	
 
 <script>
