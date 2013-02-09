@@ -1,7 +1,7 @@
 @import "bootstrap";
-$bif_orange: #b84700;
-$bif_blue: #258585;
-$bif_purple: #660066;
+$bif-orange: #b84700;
+$bif-blue: #258585;
+$bif-purple: #660066;
 
 body {
 	margin-top: 20px;
@@ -16,7 +16,7 @@ h1 {
 	text-align: center;
 }
 
-.image_center {
+.image-center {
   	display: block;
   	margin-left: auto;
   	margin-right: auto;
@@ -36,17 +36,17 @@ h1 {
 
 .blue {
 	font-weight:bold;
-	color: $bif_blue;
+	color: $bif-blue;
 }
 
 .purple {
 	font-weight:bold;
-	color: $bif_purple;
+	color: $bif-purple;
 }
 
 .orange {
 	font-weight:bold;
-	color: $bif_orange;
+	color: $bif-orange;
 }
 
 .testSentence{
@@ -142,7 +142,7 @@ h1 {
 	font-style:italic;
 }
 
-#hidden_orange {
+#hidden-orange {
 	display:none;
 }
 
@@ -152,37 +152,37 @@ h1 {
 	margin-top:25px;
 }
 
-.inner_a {
+.inner-a {
 	position:absolute;
 	top:0px;
 	left:0px;
 }
-.inner_b {
+.inner-b {
 	position:absolute;
 	width:200px;
 	top:-38px;
 	left:35px;
 }
-.inner_c {
+.inner-c {
 	position:absolute;
 	width:220px;
 	top:-22px;
 	left:210px;
 }
-.inner_d {
+.inner-d {
 	position:absolute;
 	width:300px;
 	top:23px;
 	left:35px;
 }
-.inner_e {
+.inner-e {
 	position:absolute;
 	width:200px;
 	top:40px;
 	left:240px;
 }
 
-.blue_circle {
+.blue-circle {
 	margin-left:15px;
 	margin-right:15px;
 	float:left;
@@ -191,10 +191,10 @@ h1 {
 	border:solid 2px #000000; 
 	width: 35px;
 	height: 35px;
-	background: $bif_blue;
+	background: $bif-blue;
 }
 
-.purple_circle {
+.purple-circle {
 	margin-left:15px;
 	margin-right:15px;
 	float:left;
@@ -203,10 +203,10 @@ h1 {
 	border:solid 2px #000000; 
 	width: 35px;
 	height: 35px;
-	background: $bif_purple;
+	background: $bif-purple;
 }
 
-.orange_circle {
+.orange-circle {
 	margin-left:15px;
 	margin-right:15px;
 	float:left;
@@ -215,36 +215,36 @@ h1 {
 	border:solid 2px #000000; 
 	width: 35px;
 	height: 35px;
-	background: $bif_orange;
+	background: $bif-orange;
 }
 
-.bold_tool {
+.bold-tool {
 	margin-left:15px;
 	margin-right:15px;
 	float:left;
 }
 
-.tool_button {
+.tool-button {
 	float:right;
 }
 
-.underline_tool {
+.underline-tool {
 	margin-left:15px;
 	margin-right:15px;
 	float:left;
 }
 
-#circle_outer {
+#circle-outer {
 	margin-left:160px; 
 	width:250px;
 }
 
-.painting_text {
+.painting-text {
 	font-size: 2em;
 	line-height: 1.2em;
 }
 
-.painting_text_large {
+.painting-text-large {
 	font-size: 3em;
 	line-height: 1.5em;
 }
@@ -253,8 +253,10 @@ caption {
 	margin-bottom:5px;
 }
 
-#painting_canvas {
+#painting-canvas {
 	height:300px;
+	border: 3px dashed #CCCCCC;
+	margin-bottom:15px;
 }
 
 #floater {
@@ -264,7 +266,7 @@ caption {
     margin-bottom: -50px;
 }
 
-#painting_table {
+#painting-table {
 	font-size: 1.5em;
 	padding-top:10px;
 }
@@ -272,4 +274,59 @@ caption {
 #child {
     clear: both;
     height: 150px;
+}
+
+#orange-cursor {
+ 	background: url('/assets/orange_brush.png') no-repeat;
+	width: 25px;
+	height: 23px;
+ 	position: absolute;
+ 	display: none;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
+}
+
+#blue-cursor {
+ 	background: url('/assets/blue_brush.png') no-repeat;
+	width: 25px;
+	height: 23px;
+ 	position: absolute;
+ 	display: none;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
+}
+
+#purple-cursor {
+ 	background: url('/assets/purple_brush.png') no-repeat;
+	width: 25px;
+	height: 23px;
+ 	position: absolute;
+ 	display: none;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
+}
+
+#bold-cursor {
+ 	background: url('/assets/bold.png') no-repeat;
+	width: 32px;
+	height: 32px;
+ 	position: absolute;
+ 	display: none;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
+}
+
+#underline-cursor {
+ 	background: url('/assets/underline.png') no-repeat;
+	width: 32px;
+	height: 32px;
+ 	position: absolute;
+ 	display: none;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 10000;
 }

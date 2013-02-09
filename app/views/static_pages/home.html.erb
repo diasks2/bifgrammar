@@ -97,7 +97,7 @@
 	   			Check out these examples:
 	   		</p>	
 	   		<div class="outer">
-	   			<div class="inner_a">	
+	   			<div class="inner-a">	
 		   			<ul>
 		   				
 						<li><span class="purple">Who</span> did I eat sashimi with <span class="strike-through">Bill</span> at Tokyo Station on Tuesday? Bill.</li>
@@ -106,22 +106,22 @@
 						<li><span class="purple">Where</span> did I eat sashimi with Bill at <span class="strike-through">Tokyo Station</span> on Tuesday? Tokyo Station.</li>
 					</ul>
 				</div>
-				<div class="inner_b">
+				<div class="inner-b">
 					<svg>
   						<path d="M 5 40 q 35 -50 165 0" stroke="#660066" stroke-width="2" fill="none" />
 					</svg>
 				</div>
-				<div class="inner_c">
+				<div class="inner-c">
 					<svg>
   						<path d="M 0 40 q 30 50 210 0" stroke="#258585" stroke-width="2" fill="none" />
 					</svg>
 				</div>
-				<div class="inner_d">
+				<div class="inner-d">
 					<svg>
   						<path d="M 5 40 q 35 -50 245 0" stroke="#660066" stroke-width="2" fill="none" />
 					</svg>
 				</div>
-				<div class="inner_e">
+				<div class="inner-e">
 					<svg>
   						<path d="M 50 40 q 30 50 155 0" stroke="#258585" stroke-width="2" fill="none" />
 					</svg>
@@ -194,7 +194,7 @@
 				Got it? Test yourself by writing the orange word for the following sentence in the box below.
 			</p>
 			<p class="testSentence center">
-				She said, "I <span class="orange" id="hidden_orange">do</span> like you."
+				She said, "I <span class="orange" id="hidden-orange">do</span> like you."
 			</p>
 			<div class="center">
 				<p id="orangeHintText">Find the 'secret do'</p>
@@ -216,10 +216,10 @@
 				</ul>
 				Paint the sentence below by first clicking on the color to select it and then clicking on the word that should be that color. When you are finished, click 'Check Answer' to see if you answer is correct.
 			</p>
-			<div id="circle_outer">
-				<div class="blue_circle"></div>
-				<div class="orange_circle"></div>
-				<div class="purple_circle"></div>
+			<div id="circle-outer">
+				<div class="blue-circle"></div>
+				<div class="orange-circle"></div>
+				<div class="purple-circle"></div>
 				<div class="clearfix"></div>
 			</div>	
 			<br>
@@ -241,6 +241,7 @@
 	   				<li>A download link to our e-book "Understanding the Fassler Color Method"</li>
 	   			</ul>
 			</p>
+			<br>
 			<%= form_tag(painting_path, :class=> "form-horizontal") do %>
 			  	<div class="control-group">
 			    	<label class="control-label" for="inputEmail">Email</label>
@@ -488,13 +489,13 @@ $(function() {
 			$('.correct').show();
 			$('#heightAdj').hide();
 			$('#orangeNext2').show();
-			$('#hidden_orange').show();
+			$('#hidden-orange').show();
 		} else {
 			$('.wrong').fadeIn(1000).fadeOut(1000);
 			$('.correct').hide();
 			$('#heightAdj').show();
 			$('#orangeNext2').hide();
-			$('#hidden_orange').hide();
+			$('#hidden-orange').hide();
 		}
 	});
 	var color = 'blue'
@@ -504,13 +505,13 @@ $(function() {
 		color = c;
 	}; 
 
-	$('.orange_circle').click(function(){
+	$('.orange-circle').click(function(){
 		setcolor('orange');
 	});
-	$('.purple_circle').click(function(){
+	$('.purple-circle').click(function(){
 		setcolor('purple');
 	});
-	$('.blue_circle').click(function(){
+	$('.blue-circle').click(function(){
 		setcolor('blue');
 	});
 
@@ -569,6 +570,7 @@ $(function() {
 		$('.painting1').hide();
 		$('.painting2').show();
 		$('#paintingNext1').hide();
+		$('.modal-footer').hide();
 	});
 });
 </script>
