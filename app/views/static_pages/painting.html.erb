@@ -13,6 +13,7 @@
 	<div class="underline-tool"><%= link_to(image_tag("underline.png", :alt => "Underline"), :remote => true) %></div>
 	<div class="tool-button">
 		<button class="btn btn-large btn-success" id="paintingToolStart">Start!</button>
+		<button class="btn btn-large btn-warning" id="paintingReset">Reset</button>
 	</div>	
 	<div class="clearfix"></div>
 
@@ -140,7 +141,7 @@ $(function() {
 			$('#' + id).removeClass('underline');
 			$('#' + id).addClass(color);
 		}
-	}
+	};
 
 	$('#paintWord10').click(function(){
 		setcolorClick('paintWord10');
@@ -190,5 +191,25 @@ $(function() {
 	$('#paintingToolStart').click(function(){
 		$('#testSentence1').show();
 	});
+	$('#paintingReset').click(function(){
+		$('#orange-cursor').hide();
+		$('#blue-cursor').hide();
+		$('#purple-cursor').hide();
+		$('#bold-cursor').hide();
+		$('#underline-cursor').hide();
+		$('body').unbind("mousemove");
+		for (var i=10;i<=24;i++) { 
+			colorReset('paintWord' + i);
+		}
+	});
+
+	var colorReset = function(id) {
+		$('#' + id).removeClass('orange');
+		$('#' + id).removeClass('purple');
+		$('#' + id).removeClass('blue');
+		$('#' + id).removeClass('bold');
+		$('#' + id).removeClass('underline');	
+	};
+	
 });	
 </script>
