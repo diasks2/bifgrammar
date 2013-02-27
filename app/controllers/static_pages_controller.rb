@@ -5,6 +5,4 @@ class StaticPagesController < ApplicationController
   def painting
   end
 
-  def design
-  end
 end
